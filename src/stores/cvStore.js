@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { reactive, ref, computed } from 'vue'
 import TemplateOne from '@/components/cvTemplates/TemplateOne/TemplateOne.vue'
 import TemplateTwo from '@/components/cvTemplates/TemplateTwo/TemplateTwo.vue'
+import photoUrl from '/images/photo.jpg'
 
 export const useCVStore = defineStore('cv', () => {
   const cv = reactive(
@@ -38,7 +39,7 @@ export const useCVStore = defineStore('cv', () => {
           show: true,
         },
       },
-      photo: './images/photo.jpg',
+      photo: photoUrl,
       name: 'Your Name',
       jobTitle: 'Job Title',
       contact: {

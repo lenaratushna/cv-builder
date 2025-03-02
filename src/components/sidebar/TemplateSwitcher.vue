@@ -21,7 +21,7 @@ const contrastColor = computed(() => cvStore.cv.styles.contrastColor)
       class="template-btn"
       :class="{ active: cvStore.cv.template === template }"
     >
-      <img :src="`/images/template-${index + 1}.png`" alt="template" />
+      <img :src="`./images/template-${index + 1}.png`" alt="template" />
     </div>
   </div>
   <template v-if="cvStore.cv.template === 'TemplateTwo'">

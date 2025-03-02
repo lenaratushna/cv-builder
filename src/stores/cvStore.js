@@ -38,7 +38,7 @@ export const useCVStore = defineStore('cv', () => {
           show: true,
         },
       },
-      photo: '/images/photo.jpg',
+      photo: './images/photo.jpg',
       name: 'Your Name',
       jobTitle: 'Job Title',
       contact: {

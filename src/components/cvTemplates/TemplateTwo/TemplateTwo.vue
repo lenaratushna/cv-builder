@@ -78,7 +78,7 @@ onMounted(() => {
               <span>-</span>
               <EditableField v-if="job.endDate" v-model="job.endDate" />
             </div>
-            <div>
+            <div class="job-info">
               <EditableField v-if="job.company" v-model="job.company" class="job-company" />
               <EditableField v-if="job.position" v-model="job.position" class="job-position" />
               <EditableField v-if="job.desc" v-model="job.desc" />
@@ -166,6 +166,7 @@ onMounted(() => {
 
 .job {
   display: flex;
+  gap: 20px;
 }
 
 .job:not(:last-child) {
@@ -173,9 +174,12 @@ onMounted(() => {
 }
 
 .job-date {
-  flex: 1 0 78px;
-  padding-right: 20px;
+  min-width: 70px;
   text-align: center;
+}
+
+.job-info {
+  width: 100%;
 }
 
 .job-company {

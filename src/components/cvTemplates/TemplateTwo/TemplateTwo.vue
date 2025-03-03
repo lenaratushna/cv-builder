@@ -106,6 +106,7 @@ onMounted(() => {
 
 .right-col {
   width: 100%;
+  max-width: 452px;
   padding: 50px 0 24px 24px;
 }
 

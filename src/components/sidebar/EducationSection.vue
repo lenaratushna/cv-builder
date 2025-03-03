@@ -21,19 +21,16 @@ const removeEducation = (id) => {
     </div>
     <div v-show="cvStore.cv.sections.education.show" class="education-fields">
       <div v-for="education in cvStore.cv.education" :key="education.id" class="education-item">
-        <div>
+        <div class="inputs">
           <input
             v-model="education.university"
             type="text"
             placeholder="University"
+            class="university"
           />
-          <div>
+          <div class="inputs-row">
             <input v-model="education.degree" type="text" placeholder="Degree" />
-            <input
-              v-model="education.date"
-              type="text"
-              placeholder="Start date - end date"
-            />
+            <input v-model="education.date" type="text" placeholder="Start date - end date" />
           </div>
         </div>
         <button @click="removeEducation(education.id)" class="delete-btn">&times;</button>
@@ -67,20 +64,26 @@ const removeEducation = (id) => {
   margin-bottom: 14px;
 }
 
-.education-item > div {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+.education-item .inputs {
   flex-grow: 1;
 }
 
-.education-item > div > div {
+.inputs-row {
   display: flex;
-  gap: 4px;
 }
 
-.education-item > div > div > input {
-  flex-basis: 70%;
+.inputs .university {
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.inputs-row input {
+  width: 100%;
+  max-width: 50%;
+}
+
+.inputs-row input:first-child {
+  margin-right: 4px;
 }
 
 .add-btn {

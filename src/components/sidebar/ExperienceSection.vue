@@ -21,14 +21,14 @@ const removeJob = (id) => {
     </div>
     <div v-show="cvStore.cv.sections.experience.show" class="experience-fields">
       <div v-for="job in cvStore.cv.experience" :key="job.id" class="job">
-        <div>
-          <input v-model="job.company" type="text" placeholder="Company name" />
-          <input v-model="job.position" type="text" placeholder="Job position" />
+        <div class="job-inputs">
+          <input v-model="job.company" type="text" placeholder="Company name" class="company" />
+          <input v-model="job.position" type="text" placeholder="Job position" class="position" />
           <div class="job-date">
             <input v-model="job.startDate" type="text" placeholder="Start date" />
             <input v-model="job.endDate" type="text" placeholder="End date" />
           </div>
-          <textarea v-model="job.desc" placeholder="Description"></textarea>
+          <textarea v-model="job.desc" placeholder="Description" class="desc" />
         </div>
         <button @click="removeJob(job.id)" class="delete-btn">&times;</button>
       </div>
@@ -47,26 +47,36 @@ const removeJob = (id) => {
 
 .job {
   display: flex;
+  gap: 4px
 }
 
-.job > div {
+.job .job-inputs {
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+}
+
+.company,
+.position,
+.desc {
+  width: 100%;
+  margin-bottom: 4px;
 }
 
 .job:not(:last-of-type) {
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .job-date {
   display: flex;
-  gap: 4px;
+  margin-bottom: 4px;
 }
 
-.job-date input {
-  flex-basis: 50%;
+.job-date input{
+  width: 100%;
+  max-width: 50%;
+}
+
+.job-date input:first-child {
+  margin-right: 4px;
 }
 
 .add-btn {

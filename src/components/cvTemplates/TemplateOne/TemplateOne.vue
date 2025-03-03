@@ -154,7 +154,8 @@ onMounted(() => {
 }
 
 .right-col {
-  flex-grow: 1;
+  width: 100%;
+  max-width: 462px;
   padding-left: 30px;
 }
 
